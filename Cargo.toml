@@ -10,6 +10,11 @@ bytes = "1.3.0"
 object_store = { version = "0.5.3", features = ["gcp"] }
 tokio = { version = "1.24.2", features = ["full"] }
 uuid = { version = "1.2.2", features = ["v4"] }
+# Fail defult-tls and native-tls both fail the test
+reqwest = { version = "0.11.14", default-features = false, features = ["default-tls"] }
+# reqwest = { version = "0.11.14", default-features = false, features = ["native-tls"] }
+# reqwest = { version = "0.11.14", default-features = false, features = ["rustls-tls"] }
 
 [patch.crates-io]
-object_store = { git = "https://github.com/apache/arrow-rs.git", tag = "object_store_0.5.3" }
+# With the fix below defult-tls and native-tls both pass the test
+# object_store = { git = "https://github.com/glaredb/arrow-rs.git", branch = "content-length" }
