@@ -1,4 +1,4 @@
-To repros a issue with Google Cloud Storage and `ObjectStore::rename_if_not_exists`
+To repros a issue with Google Cloud Storage and `ObjectStore::rename_if_not_exists` resulting in 411 because the header doesn't contain the content length
 
 Repro can be run with
 ```
